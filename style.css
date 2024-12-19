@@ -1,0 +1,258 @@
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: Arial, sans-serif;
+line-height: 1.6;
+color: #262724;
+background-color: #f9f9f9;
+}
+
+.game-container {
+max-width: 800px;
+margin: 40px auto;
+padding: 20px;
+background-color: #f5d0e2;
+border: 1px solid #ddd;
+border-radius: 50px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+background-color: #e61cb3;
+color: #fff;
+padding: 10px;
+text-align: center;
+border-radius: 25px 25px 0 0;
+}
+
+header h1 {
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+header h6 {
+font-size: 18px;
+margin-bottom: 10px;
+}
+
+#game-section {
+background-color: #f7f7f7;
+padding: 20px;
+border: 1px solid #ddd;
+margin-bottom: 20px;
+border-radius: 0 0 25px 25px;
+}
+
+#question-container {
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+#options {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+#options li {
+background-color: #f7f7f7;
+padding: 10px;
+border: 1px solid #ddd;
+margin-bottom: 10px;
+cursor: pointer;
+}
+
+#options li:hover {
+background-color: #eee;
+}
+
+#result-container {
+background-color: #f1a6cf;
+padding: 10px;
+border: 1px solid #ddd;
+margin-bottom: 20px;
+border-radius: 25px;
+}
+
+#result {
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+#score {
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+
+#player-section {
+background-color: #f8caf4;
+padding: 20px;
+border: 1px solid #ddd;
+margin-bottom: 20px;
+border-radius: 25px;
+}
+
+#player-name {
+width: 100%;
+padding: 10px;
+font-size: 18px;
+border: 1px solid #ddd;
+}
+
+#start-button {
+background-color: #f395c1;
+color: #f5ecf0;
+padding: 10px 20px;
+font-size: 18px;
+border: none;
+cursor: pointer;
+border-radius: 25px;
+}
+
+#start-button:hover {
+background-color: #f1a6cf;
+}
+
+#play-again-button {
+background-color: #f7bfe4;
+color: #fff;
+padding: 10px 20px;
+font-size: 18px;
+border: none;
+cursor: pointer;
+border-radius: 25px;
+display: none;
+}
+
+#play-again-button:hover {
+background-color: #f1a6cf;
+}
+
+#achievement-section {
+width: auto;
+background-color: #f1a6cf;
+padding: 20px;
+border: 1px solid #ddd;
+margin-bottom: 20px;
+text-align: center;
+border-radius: 25px;
+}
+
+#achievement-image-container {
+width: 50%;
+margin: 0 auto;
+text-align: center;
+position:relative;
+}
+
+#achievement-image {
+max-width: 100%;
+height: auto;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(230, 36, 117, 0.2);
+display: none;
+margin: 0 auto;
+}
+
+.achievement-image {
+  position: relative;
+  margin: 0 auto;
+  display: none;
+}
+
+
+
+#achievement-text {
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+
+/* BUBBLES */
+
+#container {
+position: relative;
+width: 100%;
+height: 10vh;
+background-color: #f8caf4;
+overflow: hidden;
+}
+
+.bubble {
+position: absolute;
+width: 20px;
+height: 20px;
+background-color: #007bff;
+border-radius: 100%;
+animation: bubble 5s infinite;
+}
+
+@keyframes bubble {
+0% {
+transform: translateY(100vh);
+}
+100% {
+transform: translateY(-100vh);
+}
+}
+
+#container::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: radial-gradient(circle, #eb1088 10%, transparent 10%);
+background-size: 20px 20px;
+background-position: 0 0, 10px 10px, 20px 0, 30px 10px, 40px 0;
+animation: bubble-background 5s infinite;
+}
+
+@keyframes bubble-background {
+0% {
+background-position: 0 0, 10px 10px, 20px 0, 30px 10px, 40px 0;
+}
+100% {
+background-position: 40px 0, 50px 10px, 60px 0, 70px 10px, 80px 0;
+}
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+.game-container {
+margin: 20px auto;
+}
+#game-section {
+padding: 10px;
+}
+#player-section {
+padding: 10px;
+}
+#achievement-section {
+padding: 10px;
+}
+}
+
+@media only screen and (max-width: 480px) {
+.game-container {
+margin: 10px auto;
+}
+#game-section {
+padding: 5px;
+}
+#player-section {
+padding: 5px;
+}
+#achievement-section {
+padding: 5px;
+}
+}
